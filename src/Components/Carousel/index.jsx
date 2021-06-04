@@ -1,19 +1,37 @@
-import {
-  CardActionArea,
-  CardMedia,
-  CardContent,
-  Avatar,
-  Button,
-  Card,
-} from "@material-ui/core";
-import { useState } from "react";
+import { Button } from "@material-ui/core";
+import Slider from "react-slick";
+import "antd/dist/antd.css";
+import "./style.css";
+
+import ArrowForwardSharpIcon from "@material-ui/icons/ArrowForwardSharp";
+import ArrowBackSharpIcon from "@material-ui/icons/ArrowBackSharp";
 
 import ImagemCar from "../../assets/images/Mask Group 13.png";
+import Example from "../../assets/images/Group 67.png";
 import Logotipo from "../../assets/images/logotipo.png";
 import { useStyles } from "./style";
 
 const CarCarousel = () => {
   const classes = useStyles();
+
+  const settings = {
+    customPaging: function (i) {
+      return (
+        <div style={{ border: "1 px solid black" }}>
+          <a className={classes.customPaging}>{i + 1}</a>
+        </div>
+      );
+    },
+    dots: true,
+    dotsClass: "slick-dots slick-thumb",
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 5000,
+    autoplaySpeed: 2000,
+  };
   return (
     <div className={classes.container}>
       <div className={classes.headerContent}>
@@ -32,24 +50,29 @@ const CarCarousel = () => {
       </div>
       <div className={classes.bodyContent}>
         <div className={classes.bodyContentLineOne}>
-          <Button variant="outlined" className={classes.buttonCatolog}>
-            Back to catolog
-          </Button>
-          <Card
+          <Button
+            startIcon={<ArrowBackSharpIcon />}
+            size="xl"
             variant="outlined"
-            className={classes.root}
-            style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
+            disableRipple
+            className={classes.buttonCatolog}
           >
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                alt="Contemplative Reptile"
-                title="Contemplative Reptile"
-                className={classes.imagem}
-                image={ImagemCar}
-              />
-            </CardActionArea>
-          </Card>
+            Back to catalog
+          </Button>
+          <div className={classes.root}>
+            <Slider className={classes.carousel} {...settings}>
+              <div>
+                <img src={ImagemCar} />
+              </div>
+              <div>
+                <img src={Example} />
+              </div>
+              <div>
+                <img src={ImagemCar} />
+              </div>
+            </Slider>
+          </div>
+
           <div className={classes.avoid}>
             <span
               style={{ fontSize: "50px", fontWeight: "bold", width: "100%" }}
@@ -65,12 +88,17 @@ const CarCarousel = () => {
         </div>
 
         <div className={classes.bodyContentLineTwo}>
-          <Button className={classes.buttonBookNow} variant="outlined">
+          <Button
+            size="large"
+            disableRipple
+            endIcon={<ArrowForwardSharpIcon />}
+            className={classes.buttonBookNow}
+            variant="outlined"
+          >
             Book now
           </Button>
         </div>
       </div>
-      <div className={classes.controlsContent}></div>
     </div>
   );
 };

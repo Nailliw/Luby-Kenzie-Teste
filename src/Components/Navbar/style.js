@@ -19,4 +19,23 @@ export const useStyles = makeStyles(() => ({
     alignItems: "baseline",
     color: "#000",
   },
+  upButton: {
+    textTransform: "none",
+    color: "#7B89F4",
+  },
+  inButton: {
+    textTransform: "none",
+    color: "#7B89F4",
+    border: "2px solid #7B89F4",
+    borderRadius: "13px",
+    width: "84px",
+    height: "36px",
+    marginLeft: "28px",
+  },
+  middleToolbar: {
+    paddingRight: "10px",
+    fontSize: "10px",
+    fontWeight: "lighter",
+    color: "#656469",
+  },
 }));

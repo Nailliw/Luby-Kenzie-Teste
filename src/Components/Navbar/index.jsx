@@ -3,6 +3,10 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import { useStyles } from "./style";
 import { Link } from "react-router-dom";
+import { TextField } from "@material-ui/core";
+
+import RoomSharpIcon from "@material-ui/icons/RoomSharp";
+import SearchIcon from "@material-ui/icons/Search";
 
 const Navbar = () => {
   const classes = useStyles();
@@ -25,12 +29,30 @@ const Navbar = () => {
             </div>
           </Link>
 
-          <div>datas</div>
+          <div style={{ display: "flex" }}>
+            <TextField
+              className={classes.middleToolbar}
+              type="text"
+              InputProps={{
+                startAdornment: <RoomSharpIcon />,
+              }}
+            />
+
+            <form className={classes.middleToolbar} noValidate>
+              <TextField id="date" type="date" defaultValue="2021-05-24" />
+            </form>
+            <form className={classes.middleToolbar} noValidate>
+              <TextField id="date" type="date" defaultValue="2021-05-24" />
+            </form>
+            <form className={classes.middleToolbar} noValidate>
+              <SearchIcon />
+            </form>
+          </div>
           <div>
-            <Button variant="text" color="default">
+            <Button className={classes.upButton} size="small">
               Sign up
             </Button>
-            <Button variant="outlined" color="default">
+            <Button className={classes.inButton} variant="outlined">
               Sign In
             </Button>
           </div>

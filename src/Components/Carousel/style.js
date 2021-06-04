@@ -39,14 +39,12 @@ export const useStyles = makeStyles(() => ({
     height: "50px",
     textAlign: "left",
     letterSpacing: "0px",
+    borderRadius: "50px",
+    textTransform: "none",
+    "&:focus": {
+      boxShadow: "0 0 0 0.2rem rgba(0,123,255,.5)",
+    },
   },
-
-  controlsContent: {
-    border: "1px solid black",
-    height: "240px",
-    width: "100%",
-  },
-
   imagem: {
     width: "783px",
     height: "408px",
@@ -62,9 +60,34 @@ export const useStyles = makeStyles(() => ({
   buttonBookNow: {
     color: "#fff",
     backgroundColor: "#313136",
+    borderRadius: "50px",
+
+    textTransform: "none",
+    "&:hover": {
+      backgroundColor: "#313136",
+    },
+    "&:focus": {
+      boxShadow: "0 0 0 0.2rem rgba(0,123,255,.5)",
+    },
+    fontSize: "16px",
+    fontWeight: "lighter",
   },
 
-  root: {
-    border: "none",
+  carousel: {
+    height: "408px",
+    width: "783px",
+    color: "#fff",
+  },
+  customPaging: {
+    width: "100%",
+    position: "absolute",
+  },
+  bodyContentLineTwo: {
+    display: "flex",
+    justifyContent: "center",
+    width: "100%",
+    height: "100%",
+    marginTop: "60px",
+    paddingBottom: "50px",
   },
 }));

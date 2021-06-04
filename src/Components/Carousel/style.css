@@ -1,1 +1,3 @@
-@import "react-alice-carousel/lib/alice-carousel.css";
+.MuiButton-root.focused {
+  background-color: red;
+}
