@@ -1,0 +1,30 @@
+.MuiCardHeader-title {
+  text-align: left;
+  font: bold 17px;
+  letter-spacing: 0px;
+  color: #313136;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+}
+.MuiCardHeader-subheader {
+  text-align: left;
+  font: 17px;
+  letter-spacing: 0px;
+  color: #313136;
+  opacity: 1;
+  width: 90px;
+  height: 22px;
+}
+.MuiCardHeader-root {
+  height: 61px;
+  background-color: #f8f8fa;
+}
+.MuiCardContent-root {
+  background-color: #f8f8fa;
+}
+.MuiCardMedia-root {
+  background-color: #f8f8fa;
+  width: 244px;
+  height: 107px;
+}
