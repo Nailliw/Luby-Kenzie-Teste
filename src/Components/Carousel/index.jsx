@@ -2,7 +2,7 @@ import { Button } from "@material-ui/core";
 import Slider from "react-slick";
 import "antd/dist/antd.css";
 import "./style.css";
-
+import {Link} from 'react-router-dom'
 import ArrowForwardSharpIcon from "@material-ui/icons/ArrowForwardSharp";
 import ArrowBackSharpIcon from "@material-ui/icons/ArrowBackSharp";
 
@@ -57,7 +57,10 @@ const CarCarousel = () => {
             disableRipple
             className={classes.buttonCatolog}
           >
-            Back to catalog
+            <Link to='/'>
+                        Back to catalog
+            </Link>
+
           </Button>
           <div className={classes.root}>
             <Slider className={classes.carousel} {...settings}>
